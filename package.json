@@ -2,11 +2,15 @@
 	"publisher": "gonishiduka1985",
 	"name": "extractioncssselector",
 	"displayName": "ExtractionCssSelector",
-	"description": "",
-	"version": "0.0.1",
+	"description": "Generate css selector from html",
+	"icon": "images/icon.png",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
+  "author": {
+    "name": "underground0930"
+  },
 	"categories": [
 		"Other"
 	],
@@ -14,6 +18,10 @@
 		"onCommand:extension.extractionCssSelector"
 	],
 	"main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/underground0930/extractionCssSelector"
+  },
 	"contributes": {
 		"commands": [
 			{
