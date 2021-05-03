@@ -7,7 +7,7 @@ const setCssSelectors = (
   texts.forEach((text) => {
     selectors += `
 .${text}{
-  ${input ? input : ""}
+  ${input ? input.replace(/\s*\\n\s*/g, (match) => "\n  ") : ""}
 }
 `;
   });
