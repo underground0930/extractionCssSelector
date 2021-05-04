@@ -26,7 +26,7 @@
 		"commands": [
 			{
 				"command": "extension.extractionCssSelector",
-				"title": "cssセレクタの抽出"
+				"title": "Generate css selector from html"
 			}
 		],
 		"menus": {
