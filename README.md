@@ -2,7 +2,7 @@
 
 Generate css selector from html
 
-# Features
+## Features
 
 ・htmlタグから「class」 と 「className」を抽出してcssセレクターを生成します。
 ・重複したセレクターを１つにまとめられます。
@@ -11,4 +11,22 @@ Generate css selector from html
 ・生成されたcssセレクターは、クリップボードにコピーされます。
 ・生成されるセレクター内に、任意の文字列を挿入することが可能です。
 
-# Capture
+## Capture
+
+### ドキュメント全体から生成
+
+![capture 01](images/capture/capture_1.gif)
+
+### 選択範囲から生成
+
+![capture 02](images/capture/capture_2.gif)
+
+### ドキュメント全体から生成 & 任意の文字列を挿入
+
+![capture 03](images/capture/capture_3.gif)
+
+#### 【ex】
+
+```scss
+  @include pc{} \n @include sp{}
+```
