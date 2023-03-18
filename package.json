@@ -14,9 +14,7 @@
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [
-		"onCommand:extension.extractionCssSelector"
-	],
+	"activationEvents": [],
 	"main": "./out/extension.js",
   "repository": {
     "type": "git",
