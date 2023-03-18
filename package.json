@@ -4,9 +4,9 @@
 	"displayName": "ExtractionCssSelector",
 	"description": "Generate css selector from html",
 	"icon": "images/icon.png",
-	"version": "0.0.4",
+	"version": "1.0.0",
 	"engines": {
-		"vscode": "^1.55.0"
+		"vscode": "^1.76.2"
 	},
   "author": {
     "name": "underground0930"
