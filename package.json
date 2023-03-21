@@ -1,60 +1,62 @@
 {
-	"publisher": "gonishiduka1985",
-	"name": "extractioncssselector",
-	"displayName": "ExtractionCssSelector",
-	"description": "Generate css selector from html",
-	"icon": "images/icon.png",
-	"version": "1.0.0",
-	"engines": {
-		"vscode": "^1.76.2"
-	},
+  "publisher": "gonishiduka1985",
+  "name": "extractioncssselector",
+  "displayName": "ExtractionCssSelector",
+  "description": "Generate css selector from html",
+  "icon": "images/icon.png",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.76.2"
+  },
   "author": {
     "name": "underground0930"
   },
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [],
-	"main": "./out/extension.js",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/underground0930/extractionCssSelector"
   },
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.extractionCssSelector",
-				"title": "Generate css selector from html"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"command": "extension.extractionCssSelector",
-					"group": "extractionCssSelector@1"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.55.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.19.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
-		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
-	}
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.extractionCssSelector",
+        "title": "Generate css selector from html"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.extractionCssSelector",
+          "group": "extractionCssSelector@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "format": "prettier --write ./src",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.5",
+    "@types/vscode": "^1.76.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "glob": "^9.3.1",
+    "mocha": "^10.2.0",
+    "prettier": "2.8.5",
+    "typescript": "^5.0.2",
+    "vscode-test": "^1.5.0"
+  }
 }
