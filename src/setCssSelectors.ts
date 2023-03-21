@@ -8,7 +8,7 @@ type Args = {
 const setCssSelectors = ({ classes, insertString }: Args): string => {
   let selectors = '';
   classes.forEach((text) => {
-    selectors += `.${text}{
+    selectors += `${text} {
 ${insertString
   .map((str, index) => {
     if (index === insertString.length - 1) {
@@ -18,6 +18,7 @@ ${insertString
   })
   .join('')}
 }`;
+    selectors += '\n\n';
   });
   return selectors;
 };

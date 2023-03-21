@@ -32,6 +32,11 @@
           },
           "default": [],
           "description": "cssセレクター内に指定した文字の配列を挿入する(settings.jsonからの方が簡単です)"
+        },
+        "extractioncssselector.includeId": {
+          "type": "boolean",
+          "default": false,
+          "description": "抽出するセレクターにclassだけでなくidも含める"
         }
       }
     },

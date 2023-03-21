@@ -14,9 +14,10 @@ export function activate(context: vscode.ExtensionContext) {
       // settings.jsonからデータを取得する
       const config = vscode.workspace.getConfiguration();
       const insertString = config.get<string[]>('extractioncssselector.insertString') as string[];
+      const includeId = config.get<boolean>('extractioncssselector.includeId') as boolean;
       const { document, selection } = activeTextEditor;
       const text = document.getText(selection.isEmpty ? undefined : selection);
-      const classes = searchSelector(text);
+      const classes = searchSelector({ text, includeId });
       if (classes.length === 0) {
         // classが見つからない場合
         showInformationMessage('classが見つかりませんでした');
