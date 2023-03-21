@@ -4,13 +4,16 @@ import setCssSelectors from './setCssSelectors';
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
-    'extension.extractionCssSelector',
+    'extension.extractioncssselector',
     async () => {
-      const { activeTextEditor, showInformationMessage, showInputBox } = vscode.window;
+      const { activeTextEditor, showInformationMessage } = vscode.window;
       if (!activeTextEditor) {
-        // アクティブなエディタがない場合
         return;
       }
+
+      // settings.jsonからデータを取得する
+      const config = vscode.workspace.getConfiguration();
+      const insertString = config.get<string[]>('extractioncssselector.insertString') as string[];
       const { document, selection } = activeTextEditor;
       const text = document.getText(selection.isEmpty ? undefined : selection);
       const classes = searchSelector(text);
@@ -20,18 +23,13 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
       const { clipboard } = vscode.env;
-      let value = undefined;
-      const isInput = await showInformationMessage(
-        'セレクタ内に文字列を入力しますか？',
-        'Yes',
-        'No'
+
+      await clipboard.writeText(
+        setCssSelectors({
+          classes,
+          insertString,
+        })
       );
-      if (isInput === 'Yes') {
-        value = await showInputBox({
-          prompt: 'セレクタ内に入力したい文字列を入力',
-        });
-      }
-      await clipboard.writeText(setCssSelectors(classes, value));
       showInformationMessage('cssセレクタをクリップボードにコピーしました');
       return;
     }

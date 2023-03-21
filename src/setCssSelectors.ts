@@ -1,12 +1,23 @@
-const setCssSelectors = (texts: string[], input: string | undefined): string => {
-  let selectors = '';
+// 貼り付けるCSSのセレクターを指定
 
-  texts.forEach((text) => {
-    selectors += `
-.${text}{
-  ${input ? input.replace(/\s*\\n\s*/g, (match) => '\n  ') : ''}
-}
-`;
+type Args = {
+  classes: string[];
+  insertString: string[];
+};
+
+const setCssSelectors = ({ classes, insertString }: Args): string => {
+  let selectors = '';
+  classes.forEach((text) => {
+    selectors += `.${text}{
+${insertString
+  .map((str, index) => {
+    if (index === insertString.length - 1) {
+      return str;
+    }
+    return str + '\n';
+  })
+  .join('')}
+}`;
   });
   return selectors;
 };

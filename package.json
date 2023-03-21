@@ -21,16 +21,30 @@
     "url": "https://github.com/underground0930/extractionCssSelector"
   },
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "ExtractionCssSelector",
+      "properties": {
+        "extractioncssselector.insertString": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "cssセレクター内に指定した文字の配列を挿入する(settings.jsonからの方が簡単です)"
+        }
+      }
+    },
     "commands": [
       {
-        "command": "extension.extractionCssSelector",
+        "command": "extension.extractioncssselector",
         "title": "Generate css selector from html"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.extractionCssSelector",
+          "command": "extension.extractioncssselector",
           "group": "extractionCssSelector@1"
         }
       ]
@@ -57,6 +71,6 @@
     "mocha": "^10.2.0",
     "prettier": "2.8.5",
     "typescript": "^5.0.2",
-    "vscode-test": "^1.5.0"
+    "@vscode/test-electron": "^2.2.3"
   }
 }
