@@ -9,7 +9,7 @@ type Args = {
 const searchSelector = ({ text, isIncludeId, excludeRegex }: Args): string[] => {
   //  const regex = /(class|className)=(["'])(.+?)\2/g;
   const regexId = isIncludeId ? '|id' : '';
-  const selectorRegex = new RegExp(`(class|className${regexId})=(["\'])(.+?)\\2`, 'g');
+  const selectorRegex = new RegExp(`(class|className${regexId})=(["'])(.+?)\\2`, 'g');
   const spaceRegex = /\s{2,}/;
   const excludeRegexVal = new RegExp(excludeRegex);
   let matches;
