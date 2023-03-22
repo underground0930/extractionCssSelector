@@ -92,9 +92,14 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "format": "prettier --write ./src",
-    "unit": "mocha ./src/test/unit/*.ts"
+    "unit": "mocha ./src/test/unit/*.ts",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@types/mocha": "^10.0.1",
@@ -106,6 +111,8 @@
     "chai": "^4.3.7",
     "eslint": "^8.36.0",
     "glob": "^9.3.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "mocha": "^10.2.0",
     "prettier": "2.8.5",
     "ts-node": "^10.9.1",

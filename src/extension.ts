@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import searchSelector from './searchSelector';
 import setCssSelectors from './setCssSelectors';
-
 const execute = async (filterId: number) => {
   const { activeTextEditor, showInformationMessage } = vscode.window;
   if (!activeTextEditor) {
