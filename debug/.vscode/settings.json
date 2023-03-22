@@ -1,0 +1,11 @@
+{
+  "extractioncssselector.insertString": [
+    "  @include pc() {",
+    "",
+    "  }",
+    "  @include sp() {",
+    "",
+    "  }"
+  ],
+  "extractioncssselector.isIncludeId": true
+}
