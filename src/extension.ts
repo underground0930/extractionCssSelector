@@ -10,21 +10,18 @@ export function activate(context: vscode.ExtensionContext) {
       if (!activeTextEditor) {
         return;
       }
-
-      // settings.jsonからデータを取得する
       const config = vscode.workspace.getConfiguration();
       const insertString = config.get<string[]>('extractioncssselector.insertString') as string[];
-      const includeId = config.get<boolean>('extractioncssselector.includeId') as boolean;
+      const isIncludeId = config.get<boolean>('extractioncssselector.isIncludeId') as boolean;
+      const excludeRegex = config.get<string>('extractioncssselector.excludeRegex') as string;
       const { document, selection } = activeTextEditor;
       const text = document.getText(selection.isEmpty ? undefined : selection);
-      const classes = searchSelector({ text, includeId });
-      if (classes.length === 0) {
-        // classが見つからない場合
+      const classes = searchSelector({ text, isIncludeId, excludeRegex });
+      if (!classes.length) {
         showInformationMessage('classが見つかりませんでした');
         return;
       }
       const { clipboard } = vscode.env;
-
       await clipboard.writeText(
         setCssSelectors({
           classes,
