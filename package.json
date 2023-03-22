@@ -93,6 +93,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "unit": "mocha ./src/test/unit/*.ts",
+    "lint": "eslint --fix ./src/**/*.ts",
     "prepare": "husky install"
   },
   "lint-staged": {
