@@ -47,7 +47,7 @@
 **EN**
 
 Right click or select one of the following three from the command palette <br>
-filter 1~3 corresponds to the 1st~3rd in the "excludeRegex" array. <br>
+filter 1〜3 corresponds to the 1st〜3rd in the "excludeRegex" array. <br>
 This allows you to set up different regular expressions and use different filters for different situations.
 
 - 「ExtractionCssSelector【filter1】」
@@ -57,7 +57,7 @@ This allows you to set up different regular expressions and use different filter
 **JA**
 
 右クリックか、コマンドパレットから以下の３つのうちの１つを選択。<br>
-filter の 1~3 は「excludeRegex」の配列の 1~3 番目と対応しています。<br>
+filter の 1〜3 は「excludeRegex」の配列の 1〜3 番目と対応しています。<br>
 これにより、それぞれ違う正規表現を設定して、場面に応じてフィルターの使い分けが出来ます。
 
 - 「ExtractionCssSelector【filter1】」
