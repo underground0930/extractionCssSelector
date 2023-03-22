@@ -11,6 +11,7 @@
   "author": {
     "name": "underground0930"
   },
+  "license": "MIT License",
   "categories": [
     "Other"
   ],
@@ -31,31 +32,57 @@
             "type": "string"
           },
           "default": [],
-          "description": "cssセレクター内に指定した文字の配列を挿入する(settings.jsonからの方が簡単です)"
+          "description": "Insert an array of the specified characters in the css selector (easier from settings.json)"
         },
         "extractioncssselector.isIncludeId": {
           "type": "boolean",
           "default": false,
-          "description": "抽出するセレクターにclassだけでなくidも含める"
+          "description": "Include id as well as class in the selector to be extracted?"
         },
         "extractioncssselector.excludeRegex": {
-          "type": "string",
-          "default": "",
-          "description": "除外したいセレクターの正規表現を入力"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3,
+          "default": [],
+          "description": "Enter the regular expression of the selector you want to exclude, up to 3 rules can be set."
         }
       }
     },
     "commands": [
       {
-        "command": "extension.extractioncssselector",
-        "title": "Generate css selector from html"
+        "title": "ExtractionCssSelector【filter1】",
+        "category": "css",
+        "command": "extractioncssselector.filter1",
+        "shortTitle": "Generate css"
+      },
+      {
+        "title": "ExtractionCssSelector【filter2】",
+        "category": "css",
+        "command": "extractioncssselector.filter2",
+        "shortTitle": "Generate css"
+      },
+      {
+        "title": "ExtractionCssSelector【filter3】",
+        "category": "css",
+        "command": "extractioncssselector.filter3",
+        "shortTitle": "Generate css"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.extractioncssselector",
+          "command": "extractioncssselector.filter1",
           "group": "extractionCssSelector@1"
+        },
+        {
+          "command": "extractioncssselector.filter2",
+          "group": "extractionCssSelector@2"
+        },
+        {
+          "command": "extractioncssselector.filter3",
+          "group": "extractionCssSelector@3"
         }
       ]
     }

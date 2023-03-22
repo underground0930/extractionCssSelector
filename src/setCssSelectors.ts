@@ -1,4 +1,4 @@
-// 貼り付けるCSSのセレクターを指定
+// Create CSS selectors to paste
 
 type Args = {
   classes: string[];

@@ -1,3 +1,5 @@
+// Extract class and id attributes from the string and make them into an array
+
 type Args = {
   text: string;
   isIncludeId: boolean;
