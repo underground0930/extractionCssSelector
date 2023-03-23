@@ -8,6 +8,10 @@
 
 - html タグから css セレクターを生成します
 
+## Marketplace URL
+
+<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=gonishiduka1985.extractioncssselector">https://marketplace.visualstudio.com/items?itemName=gonishiduka1985.extractioncssselector</a>
+
 ## Features
 
 **EN**
